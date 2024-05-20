@@ -1,0 +1,152 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Worker API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/worker/clock-ins": {
+            "get": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Get an employee by ID",
+                "description": "Returns a single employee resource identified by the given ID",
+                "operationId": "getEmployeeById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID of the employee",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmployeeResource"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Missing required parameter: id",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "message": "Missing required parameter: id"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Employee not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "message": "Employee not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/worker/clock-in": {
+            "post": {
+                "tags": [
+                    "employees"
+                ],
+                "summary": "clock-in an worker",
+                "description": "clock-in an employee after validationg it's location",
+                "operationId": "ced2f8093e2f7bbf4daafefa6cfa4160",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EmployeeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EmployeeResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "EmployeeRequest": {
+                "title": "Store Employee Request",
+                "required": [
+                    "arrival_time",
+                    "latitude",
+                    "longitude"
+                ],
+                "properties": {
+                    "arrival_time": {
+                        "description": "Name of the user",
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "description": "latitude of the worker",
+                        "type": "decimal"
+                    },
+                    "longitude": {
+                        "description": "longitude of the worker",
+                        "type": "decimal"
+                    }
+                },
+                "type": "object"
+            },
+            "EmployeeResource": {
+                "title": "Employee Resource",
+                "required": [
+                    "id",
+                    "arrival_time",
+                    "latitude",
+                    "longitude"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID of the user",
+                        "type": "integer"
+                    },
+                    "arrival_time": {
+                        "description": "Name of the user",
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "description": "latitude of the worker",
+                        "type": "decimal"
+                    },
+                    "longitude": {
+                        "description": "longitude of the worker",
+                        "type": "decimal"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

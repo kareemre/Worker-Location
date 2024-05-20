@@ -10,6 +10,12 @@ use App\Services\EmployeeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @OA\Info(
+ *     title="Worker API",
+ *     version="1.0.0"
+ * )
+ */
 class EmployeeController extends Controller
 {
 
@@ -36,7 +42,7 @@ class EmployeeController extends Controller
 
     /**
      * @OA\Get(
-     *      path="/worker/clock-ins",
+     *      path="/api/worker/clock-ins",
      *      operationId="getEmployeeById",
      *      tags={"Employees"},
      *      summary="Get an employee by ID",
@@ -102,32 +108,20 @@ class EmployeeController extends Controller
 
     /**
      * @OA\Post(
-     *      path="/worker/clock-in",
-     *      operationId="storeEmployeeClockIn",
-     *      tags={"Employees"},
-     *      summary="Clock in an employee",
-     *      description="Validates the request and calls the EmployeeService to apply business logic for clocking in an employee.",
-     *      @OA\RequestBody(
-     *          required=true,
-     *          description="Employee data to be clocked in",
-     *          @OA\JsonContent(ref="#/components/schemas/EmployeeRequest")
-     *      ),
-     *      @OA\Response(
-     *          response=200,
-     *          description="Successful operation",
-     *          @OA\JsonContent(
-     *              ref="#/components/schemas/EmployeeResource"
-     *          )
-     *      ),
-     *      @OA\Response(
-     *          response=422,
-     *          description="Validation error",
-     *          @OA\JsonContent(
-     *              example={"message": "Validation error", "errors": {...}}
-     *          )
-     *      )
+     *     path="/api/worker/clock-in",
+     *     tags={"employees"},
+     *     summary="clock-in an worker",
+     *     description="clock-in an employee after validationg it's location",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/EmployeeRequest")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/EmployeeResource")
+     *     )
      * )
-     * 
      * 
      *     
      * Validate the request and call the EmployeeService to apply business logic

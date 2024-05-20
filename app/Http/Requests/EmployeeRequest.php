@@ -15,6 +15,32 @@ class EmployeeRequest extends FormRequest
     }
 
     /**
+     *     
+     * @OA\Schema(
+     *     schema="EmployeeRequest",
+     *     type="object",
+     *     title="Store Employee Request",
+     *     required={"arrival_time", "latitude", "longitude"},
+     *     @OA\Property(
+     *         property="arrival_time",
+     *         type="string",
+     *         description="Name of the user"
+     *     ),
+     *     @OA\Property(
+     *         property="latitude",
+     *         type="decimal",
+     *         description="latitude of the worker"
+     *     ),
+     * 
+     *      @OA\Property(
+     *         property="longitude",
+     *         type="decimal",
+     *         description="longitude of the worker"
+     *     )
+     * 
+     * )
+     * 
+     * 
      * Get the validation rules that apply to the request.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>

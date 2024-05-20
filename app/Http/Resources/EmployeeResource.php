@@ -9,14 +9,31 @@ class EmployeeResource extends JsonResource
 {
 
     /**
-     * @OA\Schema(
+     *@OA\Schema(
      *     schema="EmployeeResource",
      *     type="object",
      *     title="Employee Resource",
-     *     @OA\Property(property="id", type="integer", example=123),
-     *     @OA\Property(property="arrival_date", type="string", example="2024-05-15 20:38:35"),
-     *     @OA\Property(property="latitude", type="string", example=30.049612),
-     *     @OA\Property(property="longitude", type="string", example=31.240252),
+     *     required={"id", "arrival_time", "latitude", "longitude"},
+     *     @OA\Property(
+     *         property="id",
+     *         type="integer",
+     *         description="ID of the user"
+     *     ),
+     *      @OA\Property(
+     *         property="arrival_time",
+     *         type="string",
+     *         description="Name of the user"
+     *     ),
+     *    @OA\Property(
+     *         property="latitude",
+     *         type="decimal",
+     *         description="latitude of the worker"
+     *     ),
+     *          @OA\Property(
+     *         property="longitude",
+     *         type="decimal",
+     *         description="longitude of the worker"
+     *     )
      * )
      * 
      * 
