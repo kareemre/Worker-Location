@@ -97,7 +97,7 @@ __*Response code : 200*__
 {
   "id": 0,
   "arrival_time": "string",
-  "latitude": "Unknown Type: decimal",
-  "longitude": "Unknown Type: decimal"
+  "latitude": "decimal",
+  "longitude": "decimal"
 }
 ```
