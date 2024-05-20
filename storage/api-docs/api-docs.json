@@ -8,11 +8,11 @@
         "/api/worker/clock-ins": {
             "get": {
                 "tags": [
-                    "Employees"
+                    "get-worker-clockins"
                 ],
                 "summary": "Get an employee by ID",
                 "description": "Returns a single employee resource identified by the given ID",
-                "operationId": "getEmployeeById",
+                "operationId": "3a196cf60ec50f07033be72667151ad8",
                 "parameters": [
                     {
                         "name": "id",
@@ -64,7 +64,7 @@
         "/api/worker/clock-in": {
             "post": {
                 "tags": [
-                    "employees"
+                    "post-worker-clock-in"
                 ],
                 "summary": "clock-in an worker",
                 "description": "clock-in an employee after validationg it's location",
@@ -80,6 +80,17 @@
                     }
                 },
                 "responses": {
+                    "422": {
+                        "description": "Validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "message": "Validation Error"
+                                }
+                            }
+                        }
+                    },
                     "201": {
                         "description": "successful operation",
                         "content": {
@@ -105,7 +116,7 @@
                 ],
                 "properties": {
                     "arrival_time": {
-                        "description": "Name of the user",
+                        "description": "Name of the worker",
                         "type": "string"
                     },
                     "latitude": {
@@ -129,11 +140,11 @@
                 ],
                 "properties": {
                     "id": {
-                        "description": "ID of the user",
+                        "description": "ID of the worker",
                         "type": "integer"
                     },
                     "arrival_time": {
-                        "description": "Name of the user",
+                        "description": "Name of the worker",
                         "type": "string"
                     },
                     "latitude": {

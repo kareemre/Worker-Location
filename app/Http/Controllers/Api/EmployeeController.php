@@ -43,8 +43,7 @@ class EmployeeController extends Controller
     /**
      * @OA\Get(
      *      path="/api/worker/clock-ins",
-     *      operationId="getEmployeeById",
-     *      tags={"Employees"},
+     *      tags={"get-worker-clockins"},
      *      summary="Get an employee by ID",
      *      description="Returns a single employee resource identified by the given ID",
      *      @OA\Parameter(
@@ -94,7 +93,7 @@ class EmployeeController extends Controller
 
         $id = $request->query('id');
 
-        if (!$id) {
+        if (! $id) {
 
             return response()->json(['message' => 'Missing required parameter: id'], 400);
         }
@@ -109,19 +108,28 @@ class EmployeeController extends Controller
     /**
      * @OA\Post(
      *     path="/api/worker/clock-in",
-     *     tags={"employees"},
+     *     tags={"post-worker-clock-in"},
      *     summary="clock-in an worker",
      *     description="clock-in an employee after validationg it's location",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(ref="#/components/schemas/EmployeeRequest")
      *     ),
+     * 
+     *     @OA\Response(
+     *          response=422,
+     *          description="Validation error",
+     *          @OA\JsonContent(
+     *              example={"message": "Validation Error"}
+     *          )
+     * ),
      *     @OA\Response(
      *         response=201,
      *         description="successful operation",
      *         @OA\JsonContent(ref="#/components/schemas/EmployeeResource")
      *     )
      * )
+     * 
      * 
      *     
      * Validate the request and call the EmployeeService to apply business logic
@@ -139,5 +147,6 @@ class EmployeeController extends Controller
         $data = $this->employeeService->clockEmployeeIn($requestData);
 
         return new EmployeeResource($data);
+        
     }
 }

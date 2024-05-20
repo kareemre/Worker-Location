@@ -2,12 +2,13 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\WorkerLocationValidation;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EmployeeRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the worker is authorized to make this request.
      */
     public function authorize(): bool
     {
@@ -24,7 +25,7 @@ class EmployeeRequest extends FormRequest
      *     @OA\Property(
      *         property="arrival_time",
      *         type="string",
-     *         description="Name of the user"
+     *         description="Name of the worker"
      *     ),
      *     @OA\Property(
      *         property="latitude",
@@ -49,7 +50,7 @@ class EmployeeRequest extends FormRequest
     {
         return [
             'arrival_time' => 'required|date_format:Y-m-d H:i:s',
-            'latitude'     => 'required|decimal:2,6|min:0',
+            'latitude'     => ['required', 'decimal:2,6', new WorkerLocationValidation()],
             'longitude'    => 'required|decimal:2,6|min:0'
         ];
     }

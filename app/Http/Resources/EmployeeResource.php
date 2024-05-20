@@ -17,12 +17,12 @@ class EmployeeResource extends JsonResource
      *     @OA\Property(
      *         property="id",
      *         type="integer",
-     *         description="ID of the user"
+     *         description="ID of the worker"
      *     ),
      *      @OA\Property(
      *         property="arrival_time",
      *         type="string",
-     *         description="Name of the user"
+     *         description="Name of the worker"
      *     ),
      *    @OA\Property(
      *         property="latitude",
