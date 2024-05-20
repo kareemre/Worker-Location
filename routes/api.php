@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('worker/clock-in', [EmployeeController::class, 'store']);
 
-//Route::get('worker/clock-ins')
+Route::get('worker/clock-ins', [EmployeeController::class, 'show']);

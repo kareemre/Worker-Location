@@ -11,7 +11,7 @@ class EmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class EmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'arrival_time' => 'required|date_format:Y-m-d H:i:s',
+            'latitude'     => 'required|decimal:2,6|min:0',
+            'longitude'    => 'required|decimal:2,6|min:0'
         ];
     }
 }
