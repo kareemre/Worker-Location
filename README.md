@@ -5,10 +5,13 @@ http://localhost:8080/api
 # Headers
 
 
+
 Accept : application/json
 
 
+
 # API 
+
 
 
 | Route                           | Request Method | Parameters                                           | Response  |
@@ -30,6 +33,7 @@ Accept : application/json
     "longitude" : "decimal"
 } 
 ```
+
 
 
 
@@ -59,6 +63,8 @@ __*Response code : 201*__
 `Note` status code will 201 if the Request is POST
 
 
+
+
 # <a name="GetWorkerRequest"> </a> Worker's Clock-ins Request parameter 
 
 ```json
@@ -68,7 +74,10 @@ __*Response code : 201*__
 ```
 
 
+
 # <a name="GetResponse"> </a> Get Worker's Clocks-in 
+
+
 
 
 ## Employee Not Found 
@@ -79,6 +88,7 @@ __*Response code : 404*__
   "message": "Employee not found"
 }
 ```
+
 
 
 ## Success  
