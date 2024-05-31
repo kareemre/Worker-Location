@@ -53,7 +53,7 @@ __*Response code : 422*__
 __*Response code : 201*__
 ```json 
 {
-  "id": int,
+  "id": "int",
   "arrival_time": "string",
   "latitude": "decimal",
   "longitude": "decimal"
@@ -95,7 +95,7 @@ __*Response code : 404*__
 __*Response code : 200*__
 ```json
 {
-  "id": int,
+  "id": "int",
   "arrival_time": "string",
   "latitude": "decimal",
   "longitude": "decimal"
