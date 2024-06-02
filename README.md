@@ -44,7 +44,7 @@ __*Response code : 401*__
 
 ```json 
 {
-    "message": failure,
+    "message": "failure",
     "errors": [],
     "data": "null",
 }
