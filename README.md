@@ -40,23 +40,27 @@ Accept : application/json
 # <a name="Response"> </a> Responses 
 
 ## Validation error 
-__*Response code : 422*__
+__*Response code : 401*__
 
 ```json 
 {
-    "code": 422,
+    "message": "failure",
     "errors": [],
-    "message": "Validation Error",
+    "data": "null",
 }
 ```
 ## Success  
 __*Response code : 201*__
 ```json 
 {
-  "id": 1,
-  "arrival_time": "string",
-  "latitude": "decimal",
-  "longitude": "decimal"
+  "data": {
+      "id": "int",
+      "arrival_time": "string",
+      "latitude": "decimal",
+      "longitude": "decimal"
+  }
+ "message": "success"
+ "errors":  "null"
 }
 ```
 
@@ -95,9 +99,13 @@ __*Response code : 404*__
 __*Response code : 200*__
 ```json
 {
-  "id": 0,
-  "arrival_time": "string",
-  "latitude": "Unknown Type: decimal",
-  "longitude": "Unknown Type: decimal"
+  "data": {
+      "id": "int",
+      "arrival_time": "string",
+      "latitude": "decimal",
+      "longitude": "decimal"
+  }
+ "message": "success"
+ "errors":  "null"
 }
 ```
