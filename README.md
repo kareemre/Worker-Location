@@ -89,7 +89,9 @@ __*Response code : 404*__
 
 ```json 
 {
+  "success": false
   "message": "Employee not found"
+  "data": null
 }
 ```
 
