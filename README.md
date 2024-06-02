@@ -106,6 +106,6 @@ __*Response code : 200*__
       "longitude": "decimal"
   }
  "success": true
- "errors":  "null"
+ "errors":  null
 }
 ```
