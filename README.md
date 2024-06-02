@@ -44,8 +44,8 @@ __*Response code : 401*__
 
 ```json 
 {
-    "message": "failure",
-    "errors": [],
+    "success": false,
+    "Message": [],
     "data": "null",
 }
 ```
@@ -59,8 +59,8 @@ __*Response code : 201*__
       "latitude": "decimal",
       "longitude": "decimal"
   }
- "message": "success"
- "errors":  "null"
+ "success": true
+ "message":  "null"
 }
 ```
 
@@ -105,7 +105,7 @@ __*Response code : 200*__
       "latitude": "decimal",
       "longitude": "decimal"
   }
- "message": "success"
+ "success": true
  "errors":  "null"
 }
 ```
