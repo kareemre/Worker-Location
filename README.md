@@ -46,7 +46,7 @@ __*Response code : 401*__
 {
     "success": false,
     "Message": [],
-    "data": "null",
+    "data": null,
 }
 ```
 ## Success  
@@ -60,7 +60,7 @@ __*Response code : 201*__
       "longitude": "decimal"
   }
  "success": true
- "message":  "null"
+ "message":  null
 }
 ```
 
