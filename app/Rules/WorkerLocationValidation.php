@@ -10,8 +10,20 @@ class WorkerLocationValidation implements ValidationRule, DataAwareRule
 {
 
 
-    // Earth radius in kilometers
+    /**
+     * Radius of Earth.
+     *
+     * @const int
+     */
     const EARTH_RADIUS = 6371;
+
+
+     /**
+     * Range of Working Area.
+     *
+     * @const int
+     */
+    const AREA_RANGE = 2000;
 
 
     /**
@@ -52,7 +64,7 @@ class WorkerLocationValidation implements ValidationRule, DataAwareRule
             31.240253,
             $lat,
             $long
-        ) < 2000) ? true : false;
+        ) < static::AREA_RANGE) ? true : false;
 
     }
 

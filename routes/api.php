@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::controller(EmployeeController::class)->group(function () {
 
-Route::post('worker/clock-in', [EmployeeController::class, 'store']);
+    Route::post('worker/clock-in', 'store');
 
-Route::get('worker/clock-ins', [EmployeeController::class, 'show']);
+    Route::get('worker/clock-ins', 'show');
+});
+

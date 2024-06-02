@@ -8,7 +8,6 @@ use App\Http\Resources\EmployeeResource;
 use App\Models\Employee;
 use App\Services\EmployeeService;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
  * @OA\Info(
@@ -91,6 +90,7 @@ class EmployeeController extends Controller
     public function show(Request $request)
     {
 
+        //return Employee::all();
         $id = $request->query('id');
 
         if (! $id) {
