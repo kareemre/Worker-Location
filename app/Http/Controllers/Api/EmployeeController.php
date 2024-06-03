@@ -13,15 +13,6 @@ use Illuminate\Http\Request;
 class EmployeeController extends Controller
 {
 
-
-    /**
-     * an instance of EmployeeService
-     * @var \App\Services\EmployeeService
-     */
-    protected $employeeService;
-
-
-
     /** 
      * getting the employee by id
      * 
@@ -49,7 +40,7 @@ class EmployeeController extends Controller
 
 
     /**
-     * Validate the request and call the EmployeeService to apply business logic
+     * Validate the request and clock-in the worker
      * 
      * @param EmployeeRequest $request
      * 
