@@ -44,9 +44,9 @@ __*Response code : 401*__
 
 ```json 
 {
-    "message": "failure",
-    "errors": [],
-    "data": "null",
+    "success": false,
+    "Message": [],
+    "data": null,
 }
 ```
 ## Success  
@@ -59,8 +59,8 @@ __*Response code : 201*__
       "latitude": "decimal",
       "longitude": "decimal"
   }
- "message": "success"
- "errors":  "null"
+ "success": true
+ "message":  null
 }
 ```
 
@@ -89,7 +89,9 @@ __*Response code : 404*__
 
 ```json 
 {
+  "success": false
   "message": "Employee not found"
+  "data": null
 }
 ```
 
@@ -105,7 +107,7 @@ __*Response code : 200*__
       "latitude": "decimal",
       "longitude": "decimal"
   }
- "message": "success"
- "errors":  "null"
+ "success": true
+ "message":  null
 }
 ```
