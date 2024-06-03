@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ * This snippet of code is inspired by https://github.com/hassanzohdy/mongez package
+ * 
+ * Visit the repo for more information
+*/
+
 namespace App\Managers;
 
 use Illuminate\Http\JsonResponse;
