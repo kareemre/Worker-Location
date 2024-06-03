@@ -85,8 +85,8 @@ abstract class JsonResourceManager extends JsonResource
     public function with(Request $request)
     {
         return [
-            'message' => 'success',
-            'errors'  => 'null',
+            'success' => true,
+            'message'  => null,
         ];
     }
     

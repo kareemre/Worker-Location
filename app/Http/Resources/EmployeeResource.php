@@ -8,7 +8,5 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class EmployeeResource extends JsonResourceManager
 {
-
-    const DATA = ['id', 'arrival_time', 'latitude', 'longitude'];
-
+     const DATA = ['id', 'arrival_time', 'latitude', 'longitude'];
 }
